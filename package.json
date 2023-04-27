@@ -1,6 +1,6 @@
 {
-  "name": "@samomics/eslint-config",
-  "author": "@samomics",
+  "name": "@sanomics/eslint-config",
+  "author": "@sanomics",
   "version": "0.1.0",
   "description": "ESLint Config, forked from antfu's. ",
   "main": "index.js",
