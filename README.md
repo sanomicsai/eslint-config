@@ -103,7 +103,7 @@ Sure, you can override the rules in your `.eslintrc` file.
 
 ```jsonc
 {
-  "extends": "@antfu",
+  "extends": "@sanomics",
   "rules": {
     // your rules...
   }
