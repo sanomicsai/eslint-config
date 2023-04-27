@@ -1,0 +1,17 @@
+{
+  "name": "@samomics/eslint-config",
+  "author": "@samomics",
+  "version": "0.1.0",
+  "description": "ESLint Config, forked from antfu's. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "dependencies": {
+    "@antfu/eslint-config": "^0.38.5",
+    "eslint": "^8.39.0",
+    "eslint-plugin-brackets": "^0.1.3"
+  }
+}
