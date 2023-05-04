@@ -19,6 +19,7 @@ module.exports = {
         '@typescript-eslint/indent': ['warn', 4],
         '@typescript-eslint/no-shadow': 'error',
         '@typescript-eslint/no-unused-vars': ['warn'],
+        'unused-imports/no-unused-imports': 'off',
         '@typescript-eslint/brace-style': ['off'],
         '@typescript-eslint/comma-dangle': 'warn',
         '@typescript-eslint/consistent-indexed-object-style': 'off',
