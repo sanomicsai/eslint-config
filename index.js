@@ -3,6 +3,9 @@ module.exports = {
         '@antfu/eslint-config-vue',
     ],
     plugins: ['brackets'],
+    ignorePatterns: [
+        '!*.d.ts',
+    ],
     rules: {
         'curly': 'off',
         'no-console': 'warn',
