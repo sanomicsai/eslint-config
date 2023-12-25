@@ -3,9 +3,12 @@
   "type": "module",
   "version": "1.0.2",
   "description": "ESLint Config, forked from antfu's. ",
-  "author": "@sanomics",
-  "license": "ISC",
-  "keywords": [],
+  "author": "Hash Brown <hi@xzd.me> (https://github.com/xuzuodong)",
+  "license": "MIT",
+  "homepage": "https://github.com/sanomicsai/eslint-config",
+  "keywords": [
+    "eslint-config"
+  ],
   "exports": {
     ".": {
       "import": "./dist/index.js",
