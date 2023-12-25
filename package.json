@@ -22,7 +22,7 @@
   ],
   "scripts": {
     "build": "tsup --format esm,cjs --clean --dts",
-    "publish": "npm run build && npm publish"
+    "release": "bumpp && pnpm publish"
   },
   "dependencies": {
     "@antfu/eslint-config": "^2.4.6",
