@@ -30,6 +30,9 @@ export const configs: Awaitable<UserConfigItem | UserConfigItem[]>[] = [
             'style/array-bracket-newline': ['warn', 'consistent'],
             'style/array-element-newline': ['warn', 'consistent'],
 
+            // function
+            'func-style': ['warn', 'declaration', { allowArrowFunctions: false }],
+
             // imports
             'unused-imports/no-unused-imports': 'off',
             'import/order': [
