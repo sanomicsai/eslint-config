@@ -65,4 +65,11 @@ export const configs: Awaitable<UserConfigItem | UserConfigItem[]>[] = [
             'jsonc/indent': ['warn', 2],
         },
     },
+
+    {
+        files: ['**/*.yaml'],
+        rules: {
+            'yaml/indent': ['warn', 2],
+        },
+    },
 ]
