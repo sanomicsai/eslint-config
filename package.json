@@ -26,7 +26,7 @@
     "release": "bumpp && pnpm publish"
   },
   "dependencies": {
-    "@antfu/eslint-config": "^2.4.6",
+    "@antfu/eslint-config": "^2.8.0",
     "defu": "^6.1.3"
   },
   "devDependencies": {
