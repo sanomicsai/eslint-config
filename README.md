@@ -97,7 +97,7 @@ function foo() {
 
 }
 
-// bad, 
+// bad
 const foo = () => {}
 
 // good, arrow function is allowed to use when it's passed as arguments
@@ -116,12 +116,12 @@ Generally unused vars is not allowed, except for `props` and `emit` in `.vue` fi
 
 ```vue
 <script setup lang="ts">
-// good
+// good even if `props` is not used
 const props = defineProps<{
     foo: string
 }>()
 
-// good
+// good even if `emit` is not used
 const emit = defineEmits<{
     change: [foo: string]
 }>()
