@@ -51,7 +51,7 @@ export const configs: Awaitable<UserConfigItem | UserConfigItem[]>[] = [
     {
         files: ['**/*.vue'],
         rules: {
-            'ts/no-unused-vars': ['warn', { varsIgnorePattern: '^props$' }],
+            'ts/no-unused-vars': ['warn', { varsIgnorePattern: '^(props)|(emits)$' }],
             'vue/singleline-html-element-content-newline': 'off',
             'vue/html-indent': ['warn', 4],
             'vue/component-name-in-template-casing': ['error', 'kebab-case', { registeredComponentsOnly: false }],
