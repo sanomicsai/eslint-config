@@ -1,6 +1,6 @@
 # @sanomics/eslint-config
 
-Extending [`@antfu/eslint-config`](https://github.com/antfu/eslint-config) with [Flat config](https://eslint.org/docs/latest/use/configure/configuration-files-new) and [Stylistic](https://github.com/eslint-stylistic/eslint-stylistic) features。
+Extending [`@antfu/eslint-config`](https://github.com/antfu/eslint-config) with its default [Flat config](https://eslint.org/docs/latest/use/configure/configuration-files-new) and [Stylistic](https://github.com/eslint-stylistic/eslint-stylistic) features enabled, [additional rules](#additional-rules) are also enabled and most cases will show warnings rather than errors.
 
 ## Usage in Project
 
@@ -66,7 +66,7 @@ Add the following settings to your `.vscode/settings.json`:
   ]
 }
 ```
-## Extra rules
+## Additional Rules
 
 ### Grouped import statement
 
