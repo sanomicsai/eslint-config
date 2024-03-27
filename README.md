@@ -1,13 +1,13 @@
 # @sanomics/eslint-config
 
-基于 [`@antfu/eslint-config`](https://github.com/antfu/eslint-config) 的 ESLint 配置。
+Extending [`@antfu/eslint-config`](https://github.com/antfu/eslint-config) with [Flat config](https://eslint.org/docs/latest/use/configure/configuration-files-new) and [Stylistic](https://github.com/eslint-stylistic/eslint-stylistic) features。
 
-## 在项目中的使用方法
+## Usage in Project
 
 ### Install
 
 ```bash
-pnpm i -D eslint @sanomics/eslint-config
+pnpm i -D eslint typescript @sanomics/eslint-config
 ```
 
 ### Create config file
@@ -20,18 +20,6 @@ import eslintConfig from '@sanomics/eslint-config'
 
 export default eslintConfig()
 ```
-
-With CJS:
-
-```js
-// eslint.config.js
-const eslintConfig = require('@sanomics/eslint-config').default
-
-module.exports = eslintConfig()
-```
-
-> [!TIP]
-> ESLint only detects `eslint.config.js` as the flat config entry, meaning you need to put `type: module` in your `package.json` or you have to use CJS in `eslint.config.js`. If you want explicit extension like `.mjs` or `.cjs`, or even `eslint.config.ts`, you can install [`eslint-ts-patch`](https://github.com/antfu/eslint-ts-patch) to fix it.
 
 ### Add script for package.json
 
@@ -46,9 +34,132 @@ For example:
 }
 ```
 
-## 扩展配置
+### VS Code support
 
-在 `eslint.config.js` 中:
+Install [VS Code ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+
+Add the following settings to your `.vscode/settings.json`:
+
+```jsonc
+{
+  // Enable the ESlint flat config support
+  "eslint.experimental.useFlatConfig": true,
+
+  // Disable the default formatter, use eslint instead
+  "prettier.enable": false,
+
+  // Enable eslint for all supported languages
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "html",
+    "markdown",
+    "json",
+    "jsonc",
+    "yaml",
+    "toml",
+    "gql",
+    "graphql"
+  ]
+}
+```
+## Extra rules
+
+### Grouped import statement
+
+Import statements are separated into different groups by blank lines according to categories
+
+```ts
+// built in modules
+import path from 'node:path'
+
+// external packages
+import _ from 'lodash'
+
+// internal files, including relative imports and alias
+import { foo } from './foo'
+import { bar } from '~/bar'
+
+// types
+import type { Foo } from './foo'
+```
+
+### Unified function declaration style
+
+When declearing a function, we only use [the `function` declaration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function).
+
+```ts
+// good
+function foo() {
+
+}
+
+// bad, 
+const foo = () => {}
+
+// good, arrow function is allowed to use when it's passed as arguments
+setTimeout(() => {
+
+},1000)
+```
+
+### No shadow
+
+See [no-shadow - ESLint](https://eslint.org/docs/latest/rules/no-shadow) for detail.
+
+### No unused vars
+
+Generally unused vars is not allowed, except for `props` and `emit` in `.vue` files. 
+
+```vue
+<script setup lang="ts">
+// good
+const props = defineProps<{
+    foo: string
+}>()
+
+// good
+const emit = defineEmits<{
+    change: [foo: string]
+}>()
+
+// bad
+const foo = ''
+</script>
+```
+
+### Kebab-casing and self-closing component
+
+```vue
+<template>
+    <!-- good -->
+    <user-form />
+
+    <!-- bad -->
+    <UserFrom />
+
+    <!-- bad -->
+    <user-form></user-form>
+</template>
+```
+
+### No self-closing HTML element
+
+```vue
+<template>
+    <!-- good -->
+    <div></div>
+
+    <!-- bad -->
+    <div />
+</template>
+```
+## Customization
+
+In `eslint.config.js`:
 
 ```js
 import eslintConfig from '@sanomics/eslint-config'
@@ -80,3 +191,5 @@ export default eslintConfig(
     },
 )
 ```
+
+Please check [Anthony Fu's `README.md`](https://github.com/antfu/eslint-config#customization) for more. 
