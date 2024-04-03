@@ -67,7 +67,7 @@ export const configs: Awaitable<UserConfigItem | UserConfigItem[]>[] = [
     },
 
     {
-        files: ['**/*.yaml'],
+        files: ['**/*.yaml', '**/*.yml'],
         rules: {
             'yaml/indent': ['warn', 2],
         },
