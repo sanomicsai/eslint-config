@@ -31,9 +31,9 @@
   },
   "devDependencies": {
     "bumpp": "^9.4.0",
-    "eslint": "npm:eslint-ts-patch@8.55.0-1",
+    "eslint": "npm:eslint-ts-patch@8.57.0-0",
     "eslint-flat-config-utils": "^0.1.0",
-    "eslint-ts-patch": "8.55.0-1",
+    "eslint-ts-patch": "8.57.0-0",
     "tsup": "^8.0.2",
     "typescript": "^5.4.3"
   }

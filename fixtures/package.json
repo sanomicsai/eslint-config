@@ -1,0 +1,12 @@
+{
+  "name": "fixtures",
+  "private": true,
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "main": "index.js",
+  "dependencies": {
+    "@sanomics/eslint-config": "workspace:*"
+  }
+}
